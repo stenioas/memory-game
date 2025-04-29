@@ -108,7 +108,7 @@ const MemoryGame = () => {
               }}
             >
               <span className="text-white">Próximo:</span>
-              <Chip color="warning" size="sm">
+              <Chip color="warning" size="md" variant="bordered">
                 <span
                   className="text-white"
                   style={{ fontSize: '16px', fontWeight: 'bold' }}
