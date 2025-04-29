@@ -26,9 +26,12 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm ci
 
       - name: Build
         run: npm run build
