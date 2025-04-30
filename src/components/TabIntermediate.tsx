@@ -73,16 +73,15 @@ const TabIntermediate = () => {
 
   return (
     <div
-      className="flex flex-col p-4"
+      className="flex flex-col"
       style={{
-        gap: '32px',
+        flex: 1,
+        height: '100%',
+        gap: '24px',
         justifyContent: 'space-between',
       }}
     >
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold text-center mb-4 text-white text-shadow-lg">
-          Jogo da Memória
-        </h1>
+      <div style={{ paddingTop: '16px' }}>
         {gameWon ? (
           <span className="text-center text-white">
             Parabéns! Você venceu!
@@ -168,7 +167,7 @@ const TabIntermediate = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-4 w-full">
+      <div className="flex justify-center px-2">
         <Button
           size="lg"
           color="primary"

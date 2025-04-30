@@ -10,13 +10,19 @@ const MemoryGame = () => {
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'center',
         height: '100%',
-        maxWidth: '312px',
+        maxWidth: '360px',
+        padding: '24px',
       }}
     >
-      <Tabs color="primary" className="dark">
+      <Tabs
+        size="md"
+        radius="md"
+        color="primary"
+        className="dark"
+        classNames={{ panel: 'p-0 w-full max-h-[800px]' }}
+      >
         <Tab title="Iniciante">
           <TabBegginer />
         </Tab>
