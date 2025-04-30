@@ -13,6 +13,14 @@ const urlsToCache = [
   '/memory-game/icons/icon-192x192.png',
   '/memory-game/icons/icon-384x384.png',
   '/memory-game/icons/icon-512x512.png',
+  '/memory-game/icons/dark/icon-72x72.png',
+  '/memory-game/icons/dark/icon-96x96.png',
+  '/memory-game/icons/dark/icon-128x128.png',
+  '/memory-game/icons/dark/icon-144x144.png',
+  '/memory-game/icons/dark/icon-152x152.png',
+  '/memory-game/icons/dark/icon-192x192.png',
+  '/memory-game/icons/dark/icon-384x384.png',
+  '/memory-game/icons/dark/icon-512x512.png',
 ];
 
 self.addEventListener('install', (event) => {
