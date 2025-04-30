@@ -28,8 +28,8 @@ const GameCard = ({
       className="card-container"
       style={{
         perspective: '1000px',
-        height: '80px',
-        width: '80px',
+        height: '64px',
+        width: '64px',
       }}
     >
       <div
