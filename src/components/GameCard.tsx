@@ -1,5 +1,4 @@
 import { Card } from '@heroui/react';
-import './GameCard.css';
 import { CircleArrowIcon } from './CircleArrowIcon';
 
 interface GameCardProps {

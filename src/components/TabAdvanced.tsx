@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button, Chip } from '@heroui/react';
+import { Alert, Button, Chip } from '@heroui/react';
 import GameCard from './GameCard';
 
 interface GameCard {
@@ -73,38 +73,57 @@ const TabAdvanced = () => {
 
   return (
     <div
-      className="flex flex-col"
       style={{
+        display: 'flex',
+        flexDirection: 'column',
         height: '100%',
+        maxHeight: '800px',
+        width: '100%',
+        maxWidth: '480px',
         gap: '24px',
         justifyContent: 'space-between',
+        padding: '16px',
       }}
     >
-      <div className="flex justify-center" style={{ paddingTop: '16px' }}>
+      <div
+        style={{ display: 'flex', justifyContent: 'center', padding: '0 8px' }}
+      >
         {gameWon ? (
-          <span className="text-center text-white">
-            Parabéns! Você venceu!
-          </span>
+          <Alert variant="faded" hideIcon className="dark text-center">
+            <span
+              className="text-white text-center w-full"
+              style={{ fontSize: '16px', fontWeight: 'bold' }}
+            >
+              PARABÉNS! VOCÊ VENCEU! 🎉
+            </span>
+          </Alert>
         ) : (
-          <span
-            style={{
-              display: 'flex',
-              width: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <span className="text-white">Próximo:</span>
-            <Chip color="warning" size="md" variant="bordered">
+          <Alert variant="faded" hideIcon className="dark">
+            <span
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                width: '100%',
+                justifyContent: 'space-around',
+                gap: '8px',
+              }}
+            >
               <span
                 className="text-white"
                 style={{ fontSize: '16px', fontWeight: 'bold' }}
               >
-                {currentSequence}
+                Próximo número:
               </span>
-            </Chip>
-          </span>
+              <Chip color="success" size="lg" variant="bordered">
+                <span
+                  className="text-white"
+                  style={{ fontSize: '16px', fontWeight: 'bold' }}
+                >
+                  {currentSequence}
+                </span>
+              </Chip>
+            </span>
+          </Alert>
         )}
       </div>
 

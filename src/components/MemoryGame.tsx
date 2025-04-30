@@ -1,38 +1,67 @@
-import { Tab, Tabs } from '@heroui/react';
+import { Navbar, NavbarContent, Tab, Tabs } from '@heroui/react';
 import TabBegginer from './TabBegginer';
 import TabIntermediate from './TabIntermediate';
 import TabAdvanced from './TabAdvanced';
+import { useState } from 'react';
 
 const MemoryGame = () => {
+  const [selectedTab, setSelectedTab] = useState<string>('Iniciante');
   return (
     <div
       style={{
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         height: '100%',
-        maxWidth: '360px',
-        padding: '24px',
       }}
     >
-      <Tabs
-        size="md"
-        radius="md"
-        color="primary"
-        className="dark"
-        classNames={{ panel: 'p-0 w-full max-h-[800px]' }}
+      <Navbar className="dark">
+        <NavbarContent
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Tabs
+            size="md"
+            radius="md"
+            className="dark"
+            classNames={{
+              panel: 'p-0 w-full',
+              tabList: 'flex-1 max-w-[480px]',
+            }}
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              maxWidth: '480px',
+            }}
+            onSelectionChange={(value) => {
+              console.log(value);
+              setSelectedTab(value as string);
+            }}
+          >
+            <Tab key="Iniciante" title="Iniciante"></Tab>
+            <Tab key="Intermediário" title="Intermediário"></Tab>
+            <Tab key="Avançado" title="Avançado"></Tab>
+          </Tabs>
+        </NavbarContent>
+      </Navbar>
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
       >
-        <Tab title="Iniciante">
-          <TabBegginer />
-        </Tab>
-        <Tab title="Intermediário">
-          <TabIntermediate />
-        </Tab>
-        <Tab title="Avançado">
-          <TabAdvanced />
-        </Tab>
-      </Tabs>
+        {selectedTab === 'Iniciante' && <TabBegginer />}
+        {selectedTab === 'Intermediário' && <TabIntermediate />}
+        {selectedTab === 'Avançado' && <TabAdvanced />}
+      </div>
     </div>
   );
 };
