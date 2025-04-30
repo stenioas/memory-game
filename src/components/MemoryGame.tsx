@@ -26,6 +26,8 @@ const MemoryGame = () => {
           <Tabs
             size="md"
             radius="md"
+            variant="bordered"
+            color="primary"
             className="dark"
             classNames={{
               panel: 'p-0 w-full',
@@ -39,10 +41,7 @@ const MemoryGame = () => {
               width: '100%',
               maxWidth: '480px',
             }}
-            onSelectionChange={(value) => {
-              console.log(value);
-              setSelectedTab(value as string);
-            }}
+            onSelectionChange={(value) => setSelectedTab(value as string)}
           >
             <Tab key="Iniciante" title="Iniciante"></Tab>
             <Tab key="Intermediário" title="Intermediário"></Tab>

@@ -67,7 +67,7 @@ const TabIntermediate = () => {
         setCards(resetCards);
         setCurrentSequence(1);
         setHasError(false);
-      }, 1500);
+      }, 1000);
     }
   };
 
@@ -89,7 +89,12 @@ const TabIntermediate = () => {
         style={{ display: 'flex', justifyContent: 'center', padding: '0 8px' }}
       >
         {gameWon ? (
-          <Alert variant="faded" hideIcon className="dark text-center">
+          <Alert
+            variant="faded"
+            color="success"
+            hideIcon
+            className="dark text-center"
+          >
             <span
               className="text-white text-center w-full"
               style={{ fontSize: '16px', fontWeight: 'bold' }}
@@ -98,7 +103,7 @@ const TabIntermediate = () => {
             </span>
           </Alert>
         ) : (
-          <Alert variant="faded" hideIcon className="dark">
+          <Alert variant="bordered" hideIcon className="dark">
             <span
               style={{
                 display: 'flex',
@@ -114,7 +119,7 @@ const TabIntermediate = () => {
               >
                 Próximo número:
               </span>
-              <Chip color="success" size="lg" variant="bordered">
+              <Chip color="primary" size="lg" radius="md" variant="bordered">
                 <span
                   className="text-white"
                   style={{ fontSize: '16px', fontWeight: 'bold' }}
@@ -189,13 +194,15 @@ const TabIntermediate = () => {
         <Button
           size="lg"
           color="primary"
+          variant="flat"
           onPress={initializeGame}
           fullWidth
+          className="dark"
           style={{
             fontWeight: 'bold',
           }}
         >
-          Reiniciar Jogo
+          Reiniciar
         </Button>
       </div>
     </div>
